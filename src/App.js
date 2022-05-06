@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+// API => `https://fantasy.premierleague.com/api/${path}`;
+
+// backendURL = 'https://fpl-api-raf.herokuapp.com/';
+// path = `?path=entry/821650/history/`
 
 function App() {
+
+  const [team, setTeam] = useState('poo');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      fetch("http://localhost:3000/myteam")
+        .then(response => response.json())
+        .then(response => {
+            
+          setTeam(response)
+          console.log(response)
+          setLoading(false)
+        }
+      ) 
+  },[])
+
+  if(loading) return <h1>Loading ...</h1>
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header"></header>
+
+        <div>GW34 Team</div>  
+        <br></br>
+        <p> {JSON.stringify(team.picks)}</p>
+
     </div>
   );
 }
