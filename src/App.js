@@ -33,32 +33,84 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">Current Team</header>
 
-        <Grid container >
-          <Grid item xs={3} >
-          <PlayerCard player={team[0]} row='1'></PlayerCard> {/* Goalkeepers */}
+        <Grid 
+        container 
+        spacing={1} 
+        justifyContent="space-evenly" 
+        direction='row'
+        alignItems='center'
+        >
+
+          <Grid item xs={12} container>
+            <Grid item xs={3}/>
+            <Grid item xs={2} md={1} >
+              <PlayerCard player={team[0]}></PlayerCard></Grid>{/* Goalkeepers */}
+            <Grid item xs={2}/>
+            <Grid item xs={2} md={1} >
+              <PlayerCard player={team[1]}></PlayerCard></Grid>{/* Goalkeepers */}
+            <Grid item xs={3}/>
           </Grid>
+
+
+          <Grid item xs={12} container>
+            <Grid item xs={1}/>
+            <Grid item xs={2}>
+              <PlayerCard player={team[2]}></PlayerCard> {/* Defenders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[3]}></PlayerCard> {/* Defenders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[4]}></PlayerCard> {/* Defenders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[5]}></PlayerCard> {/* Defenders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[6]}></PlayerCard> {/* Defenders */}
+            </Grid>
+            <Grid item xs={1}/>
+          </Grid>
+
+          <Grid item xs={12} container>
+            <Grid item xs={1}/>
+            <Grid item xs={2}>
+              <PlayerCard player={team[7]}></PlayerCard> {/* Midfielders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[8]}></PlayerCard> {/* Midfielders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[9]}></PlayerCard> {/* Midfielders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[10]}></PlayerCard> {/* Midfielders */}
+            </Grid>
+
+            <Grid item xs={2}>
+              <PlayerCard player={team[11]}></PlayerCard> {/* Midfielders */}
+            </Grid>
+            <Grid item xs={1}/>
+          </Grid>
+
+  
+
+          <PlayerCard player={team[12]}></PlayerCard> {/* Forwards */}
+          <PlayerCard player={team[13]}></PlayerCard> {/* Forwards */}
+          <PlayerCard player={team[14]}></PlayerCard> {/* Forwards */}
         </Grid>
 
 
-          <PlayerCard player={team[1]} row='2'></PlayerCard> 
+          
    
-          <PlayerCard player={team[2]} row='2'></PlayerCard> {/* Defenders */}
-          <PlayerCard player={team[3]} row='2'></PlayerCard>
-          <PlayerCard player={team[4]} row='2'></PlayerCard>
-          <PlayerCard player={team[5]} row='2'></PlayerCard> 
-          <PlayerCard player={team[6]} row='2'></PlayerCard> 
-
-          <PlayerCard player={team[7]} row='3'></PlayerCard> {/* Midfielders */}
-          <PlayerCard player={team[8]} row='3'></PlayerCard> 
-          <PlayerCard player={team[9]} row='3'></PlayerCard> 
-          <PlayerCard player={team[10]} row='3'></PlayerCard> 
-          <PlayerCard player={team[11]} row='3'></PlayerCard> 
-
-          <PlayerCard player={team[12]} row='4'></PlayerCard> {/* Forwards */}
-          <PlayerCard player={team[13]} row='4'></PlayerCard> 
-          <PlayerCard player={team[14]} row='4'></PlayerCard> 
         
 
         

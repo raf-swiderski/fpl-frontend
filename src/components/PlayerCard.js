@@ -2,28 +2,34 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Card, CardContent, Typography } from '@mui/material'
 
-import { makeStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles({
     root: {
-        minWidth: 275
+        minWidth: 200,
+        maxWidth: 250
+    },
+    h5: {
+        fontSize: '17'
     }
 })
 
 function PlayerCard(props) {
 
+    const classes = useStyles();
+
     const player = props.player;
   
     return (
       <React.Fragment>    
-        <Card variant="outlined">
+        <Card className={classes.root} variant="outlined">
           <CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
   
               Player: {props.index + 1}
   
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography className={classes.h5} component="div">
   
               {player.first_name} • {player.web_name}
   
