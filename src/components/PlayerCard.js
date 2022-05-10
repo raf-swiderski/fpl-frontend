@@ -5,51 +5,50 @@ import { Card, CardContent, Typography } from '@mui/material'
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles({
-    root: {
-        minWidth: 200,
-        maxWidth: 250
-    },
-    h5: {
-        fontSize: '17'
-    }
+  root: {
+    minWidth: 200,
+    maxWidth: 250,
+    maxHeight: 130
+  },
+  h5: {
+    fontSize: 15
+  },
+  content: {
+    fontSize: 13
+  }
 })
 
 function PlayerCard(props) {
+  const classes = useStyles();
+  const player = props.player;
+  
+  return (
+    <React.Fragment>    
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <Typography sx={{ fontSize: 12 }} color="text.secondary" >
 
-    const classes = useStyles();
+              {player.team_name}
 
-    const player = props.player;
-  
-    return (
-      <React.Fragment>    
-        <Card className={classes.root} variant="outlined">
-          <CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-  
-              Player: {props.index + 1}
-  
-            </Typography>
-            <Typography className={classes.h5} component="div">
-  
-              {player.first_name} • {player.web_name}
-  
-            </Typography>
-            <Typography sx={{ mb: 1.5 }} color="text.secondary">
-  
-              Price: {player.now_cost}
-  
-            </Typography>
-            <Typography variant="body2">
-  
-              Team: {player.team_code}
-              <br />
-              Form: {player.form}
-  
-            </Typography>
-          </CardContent>
-        </Card>
-      </React.Fragment>    
-    )
+          </Typography>
+          <Typography className={classes.h5} component="div">
+
+            {player.first_name} • {player.web_name}
+
+          </Typography>
+          <Typography className={classes.content} color="text.secondary">
+
+            Price: {player.now_cost}
+          </Typography>
+          <Typography variant="body2">
+
+            Form: {player.form}
+
+          </Typography>
+        </CardContent>
+      </Card>
+    </React.Fragment>    
+  )
 }
 
 
