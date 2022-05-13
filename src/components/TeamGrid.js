@@ -34,6 +34,8 @@ function TeamGrid() {
       justifyContent='center' 
       direction='row'
       alignItems='center'
+      marginTop={3}
+      marginBottom={8}
       >
 
         <Grid item xs={12} container justifyContent='center' >
