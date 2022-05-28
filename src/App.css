@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  
 }
 
 .TeamGridContainer {
@@ -8,6 +9,8 @@
   left: 90px;
   right: 90px;
   top: 100px;
+  border-style:ridge;
+  border-width: 30px;
 }
 
 

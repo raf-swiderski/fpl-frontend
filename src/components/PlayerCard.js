@@ -38,7 +38,7 @@ function PlayerCard(props) {
           </Typography>
           <Typography className={classes.content} color="text.secondary">
 
-            Price: {player.now_cost}m
+            £{player.now_cost}m
           </Typography>
           <Typography variant="body2">
 
