@@ -1,13 +1,13 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-
-
+import { 
+  TextField, 
+  IconButton, 
+  Button, 
+  Typography, 
+  Toolbar, 
+  Box, 
+  AppBar} from '@mui/material';
 
 function NavBar() {
 
@@ -27,7 +27,14 @@ function NavBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             FPL Team Builder
           </Typography>
-          <Button color="inherit">My Team</Button>
+          <TextField
+          label="Enter Team ID"
+          id="outlined-size-small"
+          size="small"
+          variant="filled"
+          color="secondary"
+          />
+          <Button color="inherit" >Get Team</Button>
         </Toolbar>
       </AppBar>
     </Box>

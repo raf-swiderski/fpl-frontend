@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { Card, CardContent, Typography } from '@mui/material'
-
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../Theme';
 import { makeStyles } from "@mui/styles"
 
 const useStyles = makeStyles({
@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     maxWidth: 250,
     maxHeight: 130
   },
-  h5: {
+  cardHeader: {
     fontSize: 15
   },
   content: {
@@ -23,15 +23,18 @@ function PlayerCard(props) {
   const player = props.player;
   
   return (
-    <React.Fragment>    
-      <Card className={classes.root} variant="outlined">
+    <ThemeProvider theme={theme}> 
+      <Card variant="outlined"       
+      sx={{
+        bgcolor: 'secondary.main'
+      }}>
         <CardContent>
           <Typography sx={{ fontSize: 12 }} color="text.secondary" >
 
               {player.team_name}
 
           </Typography>
-          <Typography className={classes.h5} component="div">
+          <Typography className={classes.cardHeader} component="div">
 
             {player.first_name} • {player.web_name}
 
@@ -47,7 +50,7 @@ function PlayerCard(props) {
           </Typography>
         </CardContent>
       </Card>
-    </React.Fragment>    
+    </ThemeProvider>    
   )
 }
 
