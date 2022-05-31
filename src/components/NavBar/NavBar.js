@@ -7,9 +7,18 @@ import {
   Typography, 
   Toolbar, 
   Box, 
-  AppBar} from '@mui/material';
+  AppBar } from '@mui/material';
 
-function NavBar() {
+
+function NavBar(props) {
+
+  const [ teamID, setTeamID ] = React.useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    
+    props.teamID(teamID)
+  }
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -27,14 +36,17 @@ function NavBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             FPL Team Builder
           </Typography>
-          <TextField
-          label="Enter Team ID"
-          id="outlined-size-small"
-          size="small"
-          variant="filled"
-          color="secondary"
-          />
-          <Button color="inherit" >Get Team</Button>
+          <form noValidate autoComplete='off' onSubmit={handleSubmit}>
+            <TextField
+            onChange={(e) => setTeamID(e.target.value)}
+            required
+            label="Enter Team ID"
+            size="small"
+            variant="outlined"
+            color="secondary"
+            />
+            <Button color="inherit" type='submit' >Get Team</Button>
+          </form>
         </Toolbar>
       </AppBar>
     </Box>
