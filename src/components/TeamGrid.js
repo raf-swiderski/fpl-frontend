@@ -1,11 +1,7 @@
-import { useState } from 'react';
-
 import PlayerCard from './PlayerCard';
 import * as React from 'react';
 import { Grid } from '@mui/material'
-import Container from '@mui/material/Container';
-import theme from '../Theme';
-import { ThemeProvider } from '@mui/material/styles';
+import Welcome from './Welcome';
 
 
 function TeamGrid(props) {
@@ -13,23 +9,12 @@ function TeamGrid(props) {
   console.log('rendering component')
 
   if (props.team == null) {
-    return <h1>Loading ...</h1>
-    
+    return <Welcome/>
+
   } else if (props.team[0]) {
 
     return (
-      <ThemeProvider theme={theme}>
-        <Container fixed maxWidth="lg" 
-        sx={{
-          bgcolor: 'background',
-          boxShadow: 1,
-          borderRadius: 2,
-          p: 2,
-          minWidth: 300,
-          marginTop: 3
-        }}
-        >
-
+      <React.Fragment>
           <Grid 
           container 
           spacing={1} 
@@ -108,8 +93,7 @@ function TeamGrid(props) {
 
           </Grid>
 
-        </Container>
-      </ThemeProvider>
+      </React.Fragment>
     );
   }
 }

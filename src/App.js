@@ -5,16 +5,14 @@ import TeamGrid from './components/TeamGrid';
 import { ThemeProvider } from '@mui/material/styles';
 import NavBar from './components/NavBar/NavBar';
 import theme from './Theme.js';
+import Container from '@mui/material/Container'
 
 
 function App() {
 
   const [teamID, setTeamID] = useState(null);
   const [team, setTeam] = useState(null);
-  const [isTeam, setIsTeam] = useState(false);
-
   const isMounted = useRef(false);
-  const [loading, setLoading] = useState(true);
 
   const getTeamID = (id) => {
     setTeamID(id)
@@ -29,9 +27,7 @@ function App() {
         .then(response => response.json())
         .then(response => {
           setTeam(response)
-          setIsTeam("Yes!")
           console.log(response)
-          setLoading(false)
         }
       ) 
 
@@ -43,7 +39,18 @@ function App() {
 
     <ThemeProvider theme={theme}>
       <NavBar teamID={getTeamID}/>
-      <TeamGrid team={team} isTeam={isTeam}/>{console.log('render app')}
+      <Container fixed maxWidth="lg" 
+        sx={{
+          bgcolor: 'background',
+          boxShadow: 1,
+          borderRadius: 2,
+          p: 2,
+          minWidth: 300,
+          marginTop: 3
+        }}>
+            
+          <TeamGrid team={team}/>{console.log('render app')}
+        </Container>
     </ThemeProvider>
     
 

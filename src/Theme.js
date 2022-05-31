@@ -11,7 +11,6 @@ const theme = createTheme({
     },
     background: '#2E8B57'
   }
-   
 })
 
 export default theme;
