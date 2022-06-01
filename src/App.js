@@ -12,6 +12,7 @@ function App() {
 
   const [teamID, setTeamID] = useState(null);
   const [team, setTeam] = useState(null);
+  const [allPlayers, setAllPlayers] = useState(null);
   const isMounted = useRef(false);
 
   const getTeamID = (id) => {
@@ -30,9 +31,20 @@ function App() {
           console.log(response)
         }
       ) 
-
     }
   },[teamID])
+  
+  useEffect(() => {
+
+    fetch('https://fpl-api-raf.herokuapp.com/allplayers')
+      .then(response => response.json())
+      .then(response => {
+        setAllPlayers(response)
+        console.log(response)
+      }
+    ) 
+
+  }, [])
   
 
   return (
