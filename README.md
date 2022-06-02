@@ -10,7 +10,7 @@
   <p align="center">
     A team builder for your Fantasy Premier League Team
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong> • Visit the deployed app •</strong></a>
+    <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong> • Visit the deployed app •</strong></a> -->
     <br />
 
   </p>
