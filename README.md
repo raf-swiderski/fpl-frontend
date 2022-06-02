@@ -5,7 +5,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h3 align="center">FPL Team Builder</h3>
+  <h1 align="center">FPL Team Builder</h1>
 
   <p align="center">
     A team builder for your Fantasy Premier League Team

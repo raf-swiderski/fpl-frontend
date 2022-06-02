@@ -44,8 +44,11 @@ function NavBar(props) {
             size="small"
             variant="outlined"
             color="secondary"
+            sx={{
+              width: 150
+            }}
             />
-            <Button color="inherit" type='submit' >Get Team</Button>
+            <Button color="inherit" type='submit' style={{ padding: "8px 6px" }}>Get Team</Button>
           </form>
         </Toolbar>
       </AppBar>

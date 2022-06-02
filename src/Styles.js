@@ -7,10 +7,10 @@ const useStyles = makeStyles({
     maxHeight: 130
   },
   cardHeader: {
-    fontSize: 15
+    fontSize: 13
   },
   cardContent: {
-    fontSize: 13
+    fontSize: 11
   },
   welcomeHeader: {
     fontSize: 35,

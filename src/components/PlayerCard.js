@@ -12,7 +12,8 @@ function PlayerCard(props) {
     <ThemeProvider theme={theme}> 
       <Card variant="outlined"       
       sx={{
-        bgcolor: 'secondary.main'
+        bgcolor: 'secondary.main',
+        width: 180
       }}>
         <CardContent>
           <Typography className={classes.cardContent} color="text.secondary" >
@@ -29,7 +30,7 @@ function PlayerCard(props) {
 
             £{player.now_cost}m
           </Typography>
-          <Typography variant="body2">
+          <Typography className={classes.cardContent} >
 
             Form: {player.form}
 
