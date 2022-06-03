@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import { List, Paper, Button } from '@mui/material';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -7,6 +8,7 @@ import { FixedSizeList } from 'react-window';
 
 function renderRow(props) {
   const { index, style } = props;
+  
 
   return (
     <ListItem style={style} key={index} component="div" disablePadding>
@@ -24,15 +26,17 @@ export default function DynamicList(props) {
     <Box
       sx={{ width: '100%', height: 400, maxWidth: 100, bgcolor: 'background.paper' }}
     >
-      <FixedSizeList
-        height={400}
-        width={290}
-        itemSize={46}
-        itemCount={200}
-        overscanCount={5}
-      >
-        {renderRow}
-      </FixedSizeList>
+      <Paper style={{maxHeight: 400, overflow: 'auto'}}>
+        <List>
+            {
+                props.allPlayers.map((player, index) => (
+                    <ListItemButton>
+                        <ListItemText primary={`${player.first_name} .${player.web_name}`} />
+                    </ListItemButton>
+                ))
+            }
+        </List>
+    </Paper>
     </Box>
   );
 }
