@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Card, CardContent, Typography } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../Theme';
-import useStyles from '../Styles';
+import theme from '../../Theme';
+import useStyles from '../../Styles';
 
 function PlayerCard(props) {
   const classes = useStyles();

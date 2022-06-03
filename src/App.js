@@ -1,13 +1,15 @@
-import './Theme.js'
 import * as React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import TeamGrid from './components/TeamGrid';
-import { ThemeProvider } from '@mui/material/styles';
-import NavBar from './components/NavBar/NavBar';
+
 import theme from './Theme.js';
-import Container from '@mui/material/Container'
-import { Box, Grid } from '@mui/material';
 import getApiData from './FplApiRequests.js';
+
+import TeamGrid from './components/MainBox/TeamGrid';
+import NavBar from './components/NavBar/NavBar';
+import PlayersList from './components/PlayerSelecter/PlayerSelecter';
+
+import { ThemeProvider } from '@mui/material/styles';
+import { Box, Grid } from '@mui/material';
 
 function App() {
 
@@ -54,18 +56,7 @@ function App() {
             width: 'auto' }}>
           <TeamGrid team={team}/>{console.log('render app')}
         </Box>
-        <Box
-          sx={{
-            bgcolor: 'background',
-            boxShadow: 1,
-            borderRadius: 2,
-            p: 2,
-            marginTop: 3,
-            minWidth: 290
-          }}>
-          List of Players
-        </Box>
-
+        <PlayersList allPlayers={allPlayers} teamID={teamID}/>
       </Grid>
 
 
