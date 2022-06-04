@@ -7,7 +7,7 @@ function PlayerSelecter(props) {
 
     if (props.teamID == null) return null
 
-    const [allPlayers, setAllPlayers] = React.useState(props.allPlayers);
+    const [allPlayers] = React.useState(props.allPlayers);
 
     return (
         <Box sx={{
