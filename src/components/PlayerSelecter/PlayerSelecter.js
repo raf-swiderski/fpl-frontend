@@ -1,13 +1,21 @@
 import { Button, Box } from '@mui/material';
 import * as React from 'react';
 import DynamicList from './DynamicList'
+import ToggleSortBy from './ToggleSortBy';
 
 
 function PlayerSelecter(props) {
 
-    if (props.teamID == null) return null
+    // if (props.teamID == null) return null
+    if (props.allPlayers == null) return null
 
     const [allPlayers] = React.useState(props.allPlayers);
+    const [sortBy, setSortBy] = React.useState(null);
+
+    const getSortBy = (sortBy) => {
+      setSortBy(sortBy)
+    }
+  
 
     return (
         <Box sx={{
@@ -19,9 +27,7 @@ function PlayerSelecter(props) {
             minWidth: 290
           }}>
 
-
-            <Button color="secondary" type='submit' style={{ padding: "8px 6px" }}>Price</Button>
-            <Button color="secondary" type='submit' style={{ padding: "8px 6px" }}>Points</Button>
+            <ToggleSortBy sortBy={getSortBy}/>
 
             <DynamicList allPlayers={allPlayers}/>
 

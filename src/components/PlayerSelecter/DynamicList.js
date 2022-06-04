@@ -16,7 +16,7 @@ export default function DynamicList(props) {
                 props.allPlayers.map((player, index) => (
                     <ListItemButton key={index}>
                         <ListItemText primary={
-                            `${player.first_name} ${player.web_name} £${player.now_cost}
+                            `${player.web_name} £${player.now_cost}
                             `} />
                     </ListItemButton>
                 ))
