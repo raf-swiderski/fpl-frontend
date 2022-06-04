@@ -6,42 +6,29 @@ import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-export default function ToggleSortBy() {
-  const [alignment, setAlignment] = React.useState('left');
-  const [toggle, setToggle] = React.useState(null);
+export default function ToggleSortBy(props) {
+  const [toggle, setToggle] = React.useState();
 
-  const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
+  const handleToggle = (event, newToggle) => {
+    setToggle(newToggle);
+    props.sortBy(newToggle)
   };
 
-  const handleToggle = (e) => {
-    e.preventDefault()
-    
-    setToggle(e.target.value)
-    console.log(toggle)
-  }
 
   return (
     <ToggleButtonGroup
-      value={alignment}
+      value={toggle}
       exclusive
-      onChange={handleAlignment}
-      aria-label="text alignment"
+      onChange={handleToggle}
+      aria-label="sort-by-toggle"
     >
-      <ToggleButton value="now_cost" aria-label="left aligned" 
-      onChange={
-        (e) => {
-          setToggle(e.target.value)
-          handleToggle(e)
-        }
-
-        } >
+      <ToggleButton value="now_cost" aria-label="left aligned">
         Price
       </ToggleButton>
-      <ToggleButton value="total_points" aria-label="centered" onClick={handleToggle}>
+      <ToggleButton value="total_points" aria-label="centered">
         Points
       </ToggleButton>
-      <ToggleButton value="form" aria-label="right aligned" onClick={handleToggle}>
+      <ToggleButton value="form" aria-label="right aligned">
         Form
       </ToggleButton>
     </ToggleButtonGroup>

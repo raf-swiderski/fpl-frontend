@@ -3,17 +3,26 @@ import * as React from 'react';
 import DynamicList from './DynamicList'
 import ToggleSortBy from './ToggleSortBy';
 
+function sortPlayers(allPlayers, sortBy) {  
+  return allPlayers.sort((a, b) => (a[sortBy] < b[sortBy]) ? 1 : -1)
+}
 
 function PlayerSelecter(props) {
 
     // if (props.teamID == null) return null
     if (props.allPlayers == null) return null
 
-    const [allPlayers] = React.useState(props.allPlayers);
+    const [allPlayers, setAllPlayers] = React.useState(props.allPlayers);
     const [sortBy, setSortBy] = React.useState(null);
 
     const getSortBy = (sortBy) => {
       setSortBy(sortBy)
+      console.log(sortBy)
+
+      let sorted = sortPlayers(allPlayers, sortBy)
+      if (sorted != null) {
+        setAllPlayers(sorted)
+      }
     }
   
 
