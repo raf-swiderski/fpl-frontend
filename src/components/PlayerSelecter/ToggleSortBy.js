@@ -1,17 +1,20 @@
 import * as React from 'react';
-import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
-import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
-import FormatAlignRightIcon from '@mui/icons-material/FormatAlignRight';
-import FormatAlignJustifyIcon from '@mui/icons-material/FormatAlignJustify';
+// import CurrencyPoundIcon from '@mui/icons-material/CurrencyPound';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 export default function ToggleSortBy(props) {
-  const [toggle, setToggle] = React.useState();
+  const [toggle, setToggle] = React.useState("total_points");
 
   const handleToggle = (event, newToggle) => {
-    setToggle(newToggle);
-    props.sortBy(newToggle)
+    if (newToggle != null) {
+      setToggle(newToggle);
+      props.sortBy(newToggle)
+    } else {
+      
+      setToggle(toggle);
+      props.sortBy(toggle)
+    }
   };
 
 
@@ -23,7 +26,7 @@ export default function ToggleSortBy(props) {
       aria-label="sort-by-toggle"
     >
       <ToggleButton value="now_cost" aria-label="left aligned">
-        Price
+        Price 
       </ToggleButton>
       <ToggleButton value="total_points" aria-label="centered">
         Points

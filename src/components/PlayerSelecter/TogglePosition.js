@@ -8,6 +8,7 @@ export default function TogglePosition(props) {
   const handleToggle = (event, newToggle) => {
     setToggle(newToggle);
     props.position(newToggle)
+
   };
 
 
