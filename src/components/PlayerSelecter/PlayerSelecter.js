@@ -11,26 +11,19 @@ function sortPlayers(allPlayers, sortBy) {
 function filterPlayerByPosition(allPlayers, position) {
   var newPlayers = []
   for (let i = 0; i < allPlayers.length; i++) {
-    if (allPlayers[i].element_type === parseInt(position)) {
-      newPlayers.push(allPlayers[i])
-    }
+    if (allPlayers[i].element_type === parseInt(position)) { newPlayers.push(allPlayers[i]) }
   }
   if (newPlayers.length === 0) { return allPlayers }
   return newPlayers
 }
 
 function manipulateList(allPlayers, sortBy, position) {
-
   allPlayers = filterPlayerByPosition(allPlayers, position);
-
   allPlayers = sortPlayers(allPlayers, sortBy);
   return allPlayers;
-
-
 };
 
-
-function PlayerSelecter(props) {
+export default function PlayerSelecter(props) { 
 
   if (props.allPlayers == null) return null
 
@@ -38,7 +31,6 @@ function PlayerSelecter(props) {
   const [sortBy, setSortBy] = React.useState(null);
   const [position, setPosition] = React.useState(null);
   const [newPlayers, setNewPlayers] = React.useState(null);
-
 
   const getSortBy = (sortBy) => {
     setSortBy(sortBy)
@@ -51,26 +43,20 @@ function PlayerSelecter(props) {
   };
 
   return (
-      <Box sx={{
-          bgcolor: 'background',
-          boxShadow: 3,
-          borderRadius: 2,
-          p: 2,
-          marginTop: 3,
-          minWidth: 290
-        }}>
+    <Box sx={{
+      bgcolor: 'background',
+      boxShadow: 3,
+      borderRadius: 2,
+      p: 2,
+      marginTop: 3,
+      minWidth: 290
+    }}>
 
-          <ToggleSortBy sortBy={getSortBy}/>
-          <br></br>
-          <TogglePosition position={getPosition}/>
+      <ToggleSortBy sortBy={getSortBy}/>
+      <br></br>
+      <TogglePosition position={getPosition}/>
 
-          <DynamicList allPlayers={newPlayers ? newPlayers : allPlayers}/>
-
-
-      </Box>
-  
-      
+      <DynamicList allPlayers={newPlayers ? newPlayers : allPlayers}/>
+    </Box>  
   );
-}
-
-export default PlayerSelecter;
+};

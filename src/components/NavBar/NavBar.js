@@ -2,12 +2,12 @@ import * as React from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import { 
   TextField, 
-  IconButton, 
-  Button, 
+  IconButton,  
   Typography, 
   Toolbar, 
   Box, 
   AppBar } from '@mui/material';
+import GetTeamButton from './GetTeamButton/GetTeamButton';
 
 
 function NavBar(props) {
@@ -48,7 +48,7 @@ function NavBar(props) {
               width: 150
             }}
             />
-            <Button color="inherit" type='submit' style={{ padding: "8px 6px" }}>Get Team</Button>
+            <GetTeamButton/>
           </form>
         </Toolbar>
       </AppBar>

@@ -32,7 +32,7 @@ function PlayerCard(props) {
           </Typography>
           <Typography className={classes.cardContent} >
 
-            Form: {player.form}
+            PPG: {player.points_per_game}
 
           </Typography>
         </CardContent>

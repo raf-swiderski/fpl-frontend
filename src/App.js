@@ -33,7 +33,8 @@ function App() {
   
   useEffect(() => {
     getApiData('https://fpl-api-raf.herokuapp.com/allplayers')
-    .then(allPlayers => { setAllPlayers(allPlayers)
+    .then(allPlayers => { 
+        setAllPlayers(allPlayers)
         console.log(allPlayers) })
   }, [])
   

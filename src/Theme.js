@@ -1,15 +1,18 @@
 import { createTheme } from '@mui/material/styles';
-// import { blueGrey, green } from '@mui/material/colors';
+
+import { teal } from '@mui/material/colors';
+
+const lightTeal = teal[50];
+const background = teal[50];
+
 
 const theme = createTheme({
   palette:{
-    primary: {
-      main: '#2E8B57'
-    },
+    primary: teal,
     secondary: {
-      main: '#FFF5EE'
+      main: lightTeal
     },
-    background: '#2E8B57'
+    background: background
   }
 })
 
