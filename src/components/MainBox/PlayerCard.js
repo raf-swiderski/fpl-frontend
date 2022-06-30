@@ -9,22 +9,22 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 
 function PlayerCard(props) {
-
-  const [ empty, setEmpty ] = React.useState(false)
-
   const classes = useStyles();
   const player = props.player;
+  const [ empty, setEmpty ] = React.useState(false)
 
-  const handleClick = (e) => {
+  const removePlayerCard = (e) => {
     setEmpty(true)
+    props.updateTeamBlueprint(props.index)
   }
 
-  const handleReset = () => {
+  const resetPlayerCard = () => {
     setEmpty(false)
+    props.updateTeamBlueprint(props.index)
   }
 
   if (empty === true) {
-    return <EmptyPlayerCard resetPlayerCard={handleReset} />
+    return <EmptyPlayerCard resetPlayerCard={resetPlayerCard} />
   }
   
   return (
@@ -43,7 +43,7 @@ function PlayerCard(props) {
 
           </Typography>
           <IconButton 
-                    onClick={handleClick}
+                    onClick={removePlayerCard}
                     sx={{
                     position: 'absolute',
                     alignSelf: 'flex-end',

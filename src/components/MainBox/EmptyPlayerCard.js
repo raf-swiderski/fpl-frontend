@@ -8,12 +8,9 @@ import IconButton from '@mui/material/IconButton';
 
 export default function EmptyPlayerCard(props) {
 
-  const player = props.player;
-
   const handleClick = (e) => {
     props.resetPlayerCard(true)
   }
-
 
   return (
     <ThemeProvider theme={theme}> 

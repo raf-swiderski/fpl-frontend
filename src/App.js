@@ -55,7 +55,7 @@ function App() {
             marginLeft: 2,
             marginRight: 2,
             width: 'auto' }}>
-          <TeamGrid team={team}/>{console.log('render app')}
+          <TeamGrid team={team}/>
         </Box>
         <PlayersList allPlayers={allPlayers} teamID={teamID}/>
       </Grid>
