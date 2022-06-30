@@ -18,6 +18,7 @@ export default function TogglePosition(props) {
       exclusive
       onChange={handleToggle}
       aria-label="sort-by-toggle"
+      sx={{backgroundColor: "secondary.main"}}
     >
       <ToggleButton value="1" aria-label="left aligned">
         GKP

@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 import { teal } from '@mui/material/colors';
 
 const lightTeal = teal[50];
-const background = teal[50];
+const background = teal[100];
 
 
 const theme = createTheme({
