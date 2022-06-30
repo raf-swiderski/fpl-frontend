@@ -3,13 +3,14 @@ import * as React from 'react';
 import { Grid } from '@mui/material'
 import Welcome from './Welcome';
 
-
 function TeamGrid(props) {
 
   console.log('rendering component')
 
   if (props.team == null) {
-    return <Welcome/>
+    return (
+      <Welcome/>
+    );
 
   } else if (props.team[0]) {
 
