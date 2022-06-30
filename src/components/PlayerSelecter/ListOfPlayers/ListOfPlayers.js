@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { List, Paper } from '@mui/material';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import Player from './Player';
 
-export default function DynamicList(props) {
+export default function ListOfPlayers(props) {
 
   return (
 
@@ -18,9 +18,7 @@ export default function DynamicList(props) {
               props.allPlayers.map((player, index) => (
                   <ListItemButton key={index} sx={{backgroundColor: "secondary.main"}}
                   >
-                      <ListItemText primary={
-                          `${player.web_name} £${player.now_cost} Points: ${player.total_points}
-                          `} />
+                    <Player player={player}/>
                   </ListItemButton>
               ))
           }

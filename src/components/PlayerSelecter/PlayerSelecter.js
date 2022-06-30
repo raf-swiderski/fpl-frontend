@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import * as React from 'react';
-import DynamicList from './DynamicList'
-import ToggleSortBy from './ToggleSortBy';
+import ListOfPlayers from './ListOfPlayers/ListOfPlayers'
+import ChangeSortBy from './ChangeSortBy';
 import TogglePosition from './TogglePosition';
 
 function sortPlayers(allPlayers, sortBy) {  
@@ -52,11 +52,11 @@ export default function PlayerSelecter(props) {
       minWidth: 290
     }}>
 
-      <ToggleSortBy sortBy={getSortBy}/>
+      <ChangeSortBy sortBy={getSortBy}/>
       <br></br>
       <TogglePosition position={getPosition}/>
 
-      <DynamicList allPlayers={newPlayers ? newPlayers : allPlayers}/>
+      <ListOfPlayers allPlayers={newPlayers ? newPlayers : allPlayers}/>
     </Box>  
   );
 };

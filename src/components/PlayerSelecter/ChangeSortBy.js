@@ -13,7 +13,7 @@ export default function ChangeSortBy(props) {
   };
 
   return (
-    <FormControl sx={{ minWidth: 285, backgroundColor: "secondary.main" }}>
+    <FormControl sx={{ minWidth: 287, backgroundColor: "secondary.main" }}>
       <InputLabel >Sort By</InputLabel>
       <Select
         value={sortBy}
